@@ -32,3 +32,5 @@ bin/
 
 package-lock.json
 .vscode/
+
+start.sh

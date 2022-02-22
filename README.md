@@ -43,3 +43,11 @@ This server provides an endpoint for [Squirrel auto-updater](https://github.com/
 #### Documentation
 
 [Check out the documentation](https://nuts.gitbook.com) for more details.
+
+
+curl -i http://localhost:8080/update/win32/0.0.6/RELEASES?id=npr-media-tray&localVersion=0.0.6&arch=amd64
+
+curl -i http://10.36.68.36:3636/update/win32/0.0.6
+
+
+curl -i http://10.36.68.36:3636/update/win32/0.0.6/RELEASES?id=npr-media-tray&localVersion=0.0.6&arch=amd64
