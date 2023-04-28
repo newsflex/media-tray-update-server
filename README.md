@@ -1,6 +1,8 @@
-# Nuts
+# Nexus Media Tray Update Server for Auto Updating
 
-Nuts is a simple (and smart) application to serve desktop-application releases.
+Originaly forked from: nuts-electron-auto-updater
+
+Nuts is a simple (and smart) application to serve desktop-application releases. Called Nuts because it uses windows.squirrel auto updates.
 
 ![Schema](./docs/schema.png)
 
