@@ -5,6 +5,11 @@
 
 GITHUB_TOKEN=$1
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+
+nvm use default
+
 pm2 stop media-tray-update-server
 
 # keep previous copy in case we have to fall back
