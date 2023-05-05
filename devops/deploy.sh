@@ -4,6 +4,10 @@
 # so that token needs access to our private media tray repo
 
 GITHUB_TOKEN=$1
+PORT=3636
+
+# open port on server
+sudo ufw allow $PORT
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -41,8 +45,8 @@ tee -a ./media-tray.json << END
       "max_restarts": 10,
       "restart_delay": 500,
       "env": {
-        "NODE_PORT": 3636,
-        "PORT": 3636,
+        "NODE_PORT": $PORT,
+        "PORT": $PORT,
         "GITHUB_TOKEN": "$GITHUB_TOKEN",
         "GITHUB_REPO": "newsflex/media-tray",
         "TRUST_PROXY": "loopback",
