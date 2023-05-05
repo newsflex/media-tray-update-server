@@ -42,6 +42,7 @@ tee -a ./media-tray.json << END
       "restart_delay": 500,
       "env": {
         "NODE_PORT": 3636,
+        "PORT": 3636,
         "GITHUB_TOKEN": "$GITHUB_TOKEN",
         "GITHUB_REPO": "newsflex/media-tray",
         "TRUST_PROXY": "loopback",
