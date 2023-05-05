@@ -51,3 +51,28 @@ curl -i http://10.36.68.36:3636/update/win32/0.0.6
 
 
 curl -i http://10.36.68.36:3636/update/win32/0.0.6/RELEASES?id=npr-media-tray&localVersion=0.0.6&arch=amd64
+
+ssh devadmin@10.36.68.36
+
+curl -i http://localhost:8080/update/win32/0.0.7/RELEASES?id=npr-media-tray&localVersion=0.0.7&arch=amd64
+curl -i http://10.36.68.36:3636/update/win32/0.0.7/RELEASES?id=npr-media-tray&localVersion=0.0.7&arch=amd64
+
+
+ "GET /update/win32/0.0.7/RELEASES?id=npr-media-tray&localVersion=0.0.7&arch=amd64 HTTP/1.1" 200 161 "-" "-"
+0|nuts  | ::ffff:10.36.68.49 - - [22/Feb/2022:19:37:12 +0000] "GET /download/0.0.8/npr-media-tray-0.0.8-full.nupkg HTTP/1.1" 200 127694778 "-" "-"
+
+
+Really sorry for being late on this.
+
+I'm not sure I understand this PR, Nuts already supports non-stable release channel (we are using it for our application).
+
+'alpha', 'beta', 'unstable', 'rc'
+
+Basically if you publish a tag 1.0.0 and 2.0.0-beta.1:
+
+    /download/latest will download 1.0.0
+    /download/channel/beta will download 2.0.0-beta.1
+
+Then if you publish a version 2.0.0-beta.2, the user with version 1.0.0 will not be notified and the user with version 2.0.0-beta.1 will be notified and updated.
+
+The only issue is when you publish a stable version of 2.0.0 and beta users switch to it, is it what you're trying to solve here?
