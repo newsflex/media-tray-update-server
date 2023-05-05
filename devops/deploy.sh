@@ -62,3 +62,5 @@ tee -a ./media-tray.json << END
 END
 
 pm2 start ./media-tray.json
+
+pm2 save

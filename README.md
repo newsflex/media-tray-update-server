@@ -1,5 +1,14 @@
 # Nexus Media Tray Update Server for Auto Updating
 
+To run locally:
+
+- copy start-template.sh to start.sh
+- update start.sh with GITHUB_TOKEN to be able to fetch private repo releases
+- make sure start.sh is in .gitignore. NEVER commit secrets in start.sh
+- chmod +x ./start.sh
+- run `./start.sh` from now on to run the project
+
+
 Originaly forked from: nuts-electron-auto-updater
 
 Nuts is a simple (and smart) application to serve desktop-application releases. Called Nuts because it uses windows.squirrel auto updates.
