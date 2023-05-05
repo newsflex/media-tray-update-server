@@ -4,13 +4,15 @@
 # so that token needs access to our private media tray repo
 
 GITHUB_TOKEN=$1
+
 pm2 stop media-tray-update-server
 
 # keep previous copy in case we have to fall back
 rm -rf media-tray-update-server-prev
 mv media-tray-update-server media-tray-update-server-prev
 
-unzip media-tray-update-server.zip ./media-tray-update-server.zip
+# assumes prev deploy task has unziped into folder called "media-tray-update-server-prep"
+mv media-tray-update-server-prep media-tray-update-server
 
 # add         "DEBUG":"nuts*" to env if there are issues
 
